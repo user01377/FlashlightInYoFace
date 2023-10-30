@@ -22,6 +22,7 @@ def brightness( im_file ):
    #255 brighest, 0 darkest
 
 flashlightIsOn = False
+#dadPhoneCoord = "input touchscreen tap 667 1502"
 
 #constanly runs code, probably could ask if user wanted to stop code
 while True:
