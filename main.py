@@ -29,16 +29,27 @@ while True:
    #screenshots user's screen, saves that file to a variable
    pyautogui.screenshot("./currentState.png")
    im_file = "./currentState.png"
+   
+   print(brightness(im_file))
 
-   if brightness(im_file) >= 130 or brightness(im_file) in range(45,71):
+   if brightness(im_file) >= 120 or brightness(im_file) in range(50,70):
       doubleBrightCheck = True
-
+   
    if doubleBrightCheck == True and flashlightIsOn == False:
       device.shell("input touchscreen tap 667 1502")
       flashlightIsOn = True
       doubleBrightCheck = False
 
-   elif flashlightIsOn == True and brightness(im_file) <= 129 and brightness(im_file) not in range(45,71):
+   elif flashlightIsOn == True and brightness(im_file) < 120 and brightness(im_file) not in range(50,70):
       device.shell("input touchscreen tap 667 1502")
       flashlightIsOn = False
    
+
+
+#while brightness >= 130, keep light on
+#if it dips below 130, turn off light
+
+#while brightness in range(45,71), turn on flashlight
+#if it is NOT in this range, turn off flashlight
+
+#or brightness(im_file) in range(45,71)
